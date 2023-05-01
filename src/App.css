@@ -22,3 +22,12 @@
   font-size: 1.25rem;
   line-height: 1.5;
 }
+
+img {
+  width: 100px;
+  height: auto;
+}
+
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}

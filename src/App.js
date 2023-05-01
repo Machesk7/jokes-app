@@ -2,9 +2,20 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import 'tufte-css/tufte.min.css';
+import $ from 'jquery';
 
-function App() {
-  const [jokes, setJokes] = useState([]);
+$(document).ready(function() {
+  // Fade in the content on page load
+  $('body').fadeIn('slow');
+});
+
+$(window).bind('beforeunload', function() {
+  // Fade out the content when the page is about to be refreshed
+  $('body').fadeOut('slow');
+});
+
+function JokeApp() {
+  const [jokes, setMyJokes] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,7 +29,7 @@ function App() {
           },
         }),
       ]);
-      setJokes([chuckResponse.data.value, dadResponse.data.joke]);
+      setMyJokes([chuckResponse.data.value, dadResponse.data.joke]);
       setLoading(false);
     };
 
@@ -27,7 +38,8 @@ function App() {
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-8">Jokes</h1>
+      <h1 className="text-3xl font-bold text-center mb-8">Jack's Joke Generator</h1>
+      <h2 className="text-3xl font-bold text-center mb-8">Click Refresh for some Laughs!</h2>
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -44,4 +56,4 @@ function App() {
   );
 }
 
-export default App;
+export default JokeApp;
