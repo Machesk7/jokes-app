@@ -12,7 +12,7 @@ function App() {
         axios.get('https://api.chucknorris.io/jokes/random'),
         axios.get('https://icanhazdadjoke.com/', {
           headers: {
-            Accept: 'application/json',
+          Accept: 'application/json',
           },
         }),
       ]);
@@ -28,11 +28,11 @@ function App() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <ul>
+      <ul>
           {jokes.map((joke, index) => (
             <li key={index}>{joke}</li>
           ))}
-        </ul>
+      </ul>
       )}
     </div>
   );
