@@ -26,17 +26,19 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      <h1 className="title">Jack's Joke Generator</h1>
-      <h2 className="subheading">Press refresh for some laughs!</h2>
-      <div className="joke-container">
-          <ul>
-            <li><img src="chuck.jpg"/></li>
-            {jokes.map((joke, index) => (
-              <li key={index} className="joke">{joke}</li>
-            ))}
-          </ul>
-      </div>
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-bold text-center mb-8">Jokes</h1>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <ul className="list-disc pl-8">
+          <li className="flex items-center mb-4">
+            <img src='chuck.jpg' alt="Chuck Norris" className="h-8 mr-2" />
+            <span>{jokes[0]}</span>
+          </li>
+          <li>{jokes[1]}</li>
+        </ul>
+      )}
     </div>
   );
 }
