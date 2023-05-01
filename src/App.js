@@ -54,6 +54,8 @@ function JokeApp() {
       )}
     </div>
   );
+  
 }
+
 
 export default JokeApp;
