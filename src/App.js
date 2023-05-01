@@ -7,7 +7,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchStandings = async () => {
       setLoading(true);
 
       const [premierLeagueResponse, laLigaResponse] = await Promise.all([
@@ -28,7 +28,7 @@ function App() {
       setLoading(false);
     };
 
-    fetchData();
+    fetchStandings();
   }, []);
 
   return (
@@ -64,6 +64,7 @@ function App() {
               ))}
             </tbody>
           </table>
+
           <h2>La Liga Standings</h2>
           <table>
             <thead>
