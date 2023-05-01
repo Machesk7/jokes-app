@@ -2,17 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import 'tufte-css/tufte.min.css';
-import $ from 'jquery';
 
-$(document).ready(function() {
-  // Fade in the content on page load
-  $('body').fadeIn('slow');
-});
 
-$(window).bind('beforeunload', function() {
-  // Fade out the content when the page is about to be refreshed
-  $('body').fadeOut('slow');
-});
+
 
 function JokeApp() {
   const [jokes, setMyJokes] = useState([]);
