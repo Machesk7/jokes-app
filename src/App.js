@@ -30,15 +30,12 @@ function App() {
       <h1 className="title">Jack's Joke Generator</h1>
       <h2 className="subheading">Press refresh for some laughs!</h2>
       <div className="joke-container">
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
           <ul>
+            <li><img src="chuck.jpg"/></li>
             {jokes.map((joke, index) => (
               <li key={index} className="joke">{joke}</li>
             ))}
           </ul>
-        )}
       </div>
     </div>
   );
